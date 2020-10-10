@@ -6,6 +6,10 @@ import { initProject } from './initPriject'
 
 initProject()
 
+/** remove **/
+console.log('need remove')
+/** removeend **/
+
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false

@@ -16,6 +16,9 @@
 <script>
 import goodlistService from 'service/goodList.service'
 import userService from 'service/user.service'
+/** remove **/
+console.log('need remove')
+/** removeend **/
 export default {
     data: () => {
         return {
