@@ -2,7 +2,7 @@
   <div id="app">
     <img class="vue-logo" alt="Vue logo" src="./assets/logo.png">
     <img class="ignore" alt="Vue logo" src="./assets/logo.png">
-    <div>Version: {{version}}</div>
+    <div @click="showToast">Version: {{version}}</div>
     <router-view></router-view>
   </div>
 </template>
@@ -16,6 +16,9 @@ export default {
     }
   },
   methods: {
+    showToast() {
+      this.$zToast('12344', { time: 1000 })
+    }
   },
   created() {
   }
@@ -29,7 +32,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  min-height: 100vh;
+  position: relative;
 }
 .vue-logo {
   width: 300px;
@@ -39,5 +43,14 @@ export default {
 img.ignore {
   height: 200px;
   width: 200px;
+}
+
+.layer-container {
+  position: absolute;
+  height: 0;
+}
+
+body {
+  margin: 0;
 }
 </style>

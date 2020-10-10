@@ -17,8 +17,6 @@ module.exports = {
 
   filenameHashing: true,
 
-  productionSourceMap: true,
-
   css: {
     requireModuleExtension: true,
     loaderOptions: {
@@ -47,17 +45,18 @@ module.exports = {
     .set('util', resolve('./src/util'))
     .set('service', resolve('./src/service'))
     //output
-    config.output
-    .filename('[name].[hash:5].js')
-    .chunkFilename('[name].[hash:5].js')
+    // config.output
+    // .filename('[name].[hash:5].js')
+    // .chunkFilename('[name].[hash:5].js')
 
     //plugin
+    // 自定义删除某段代码的loader
     config.module.rule('myComment')
     .test(/\.(js|vue)$/)
     .use('myCommnet-loader')
     .loader(resolve('./build/myCommentLoader.js'))
     .options({
-      env: ['development', 'production']
+      env: ['development', 'production'] // 开发环境和production生效
     })
     .end()
   },

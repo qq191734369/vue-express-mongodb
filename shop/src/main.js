@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router'
 import { initProject } from './initPriject'
+import { Toast } from './util/http/func-components/toast'
 
 initProject()
 
@@ -11,6 +12,7 @@ console.log('need remove')
 /** removeend **/
 
 Vue.use(VueRouter)
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 

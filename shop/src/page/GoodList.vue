@@ -10,16 +10,21 @@
         <div class="cart-icon" @click="gotoCartList">
             购物车数量：{{cart.length}}
         </div>
+        <Toast :show="false">惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了惊了</Toast>
     </div>
 </template>
 
 <script>
 import goodlistService from 'service/goodList.service'
 import userService from 'service/user.service'
+import Toast from 'components/Toast'
 /** remove **/
 console.log('need remove')
 /** removeend **/
 export default {
+    components: {
+        Toast
+    },
     data: () => {
         return {
             page: 1,
@@ -36,6 +41,9 @@ export default {
             this.goods = data.result.data
         });
         this.getCartList();
+        window.addEventListener('scroll', () => {
+            console.log('scroll')
+        })
     },
     methods: {
         addToCart(product) {
