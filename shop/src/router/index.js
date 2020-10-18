@@ -4,10 +4,20 @@ const routes = [
     {
         path: '/',
         redirect: {
-            name: 'goodList'
+            name: 'home'
         },
         name: 'helloword',
         component: () => import('@/components/HelloWorld.vue')
+    },
+    {
+        path: '/home',
+        name: 'home',
+        component: () => import('@/page/Home.vue')
+    },
+    {
+        path: '/main',
+        name: 'main',
+        component: () => import('@/page/Main.vue')
     },
     {
         path: '/login',

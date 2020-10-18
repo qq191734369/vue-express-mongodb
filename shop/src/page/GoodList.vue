@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div>用户名：{{userName}}</div>
         <ul>
             <li v-for="good in goods" :key="good.productId" @click="addToCart(good)">
                 <span>{{good.productName}}</span>
@@ -18,6 +19,7 @@
 import goodlistService from 'service/goodList.service'
 import userService from 'service/user.service'
 import Toast from 'components/Toast'
+import { mapState } from 'vuex'
 /** remove **/
 console.log('need remove')
 /** removeend **/
@@ -62,6 +64,14 @@ export default {
         gotoCartList() {
             this.$router.push({name: 'cartList'})
         }
+    },
+    computed: {
+        ...mapState({
+            userName: state => state.userModule.userName
+        })
+        // ...mapState('userModule', [
+        //     'userName'
+        // ])
     }
 }
 </script>

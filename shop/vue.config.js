@@ -4,7 +4,9 @@ function resolve(dir){
     return path.join(__dirname,dir) //path.join(__dirname)设置绝对路径
 }
 
-module.exports = { 
+module.exports = {
+  lintOnSave: false,
+
   publicPath: process.env.NODE_ENV === 'production'
     ? './'
     : '/',
@@ -15,7 +17,7 @@ module.exports = {
 
   indexPath: 'index.html',
 
-  filenameHashing: true,
+  filenameHashing: process.env.NODE_ENV === 'production' ? true : false,
 
   css: {
     requireModuleExtension: true,
@@ -59,6 +61,23 @@ module.exports = {
       env: ['development', 'production'] // 开发环境和production生效
     })
     .end()
+
+    // set svg-sprite-loader
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('./src/assets/icons'))
+      .end()
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('./src/assets/icons'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end()
   },
 
   devServer: {

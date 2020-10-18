@@ -10,7 +10,7 @@ module.exports = function(source){ // 文件内容
     const loaderOptions = getOptions(this) || {}; // 拿到配置信息的方法,webpack.config.js对应loader，option配置信息
     const env = loaderOptions.env;
     if (env && env.length > 0 && env.includes(process.env.NODE_ENV)) {
-      result = result.replace(/\/\*\* remove \*\*\/[\s\S]*\/\*\* removeend \*\*\//, (match) => {
+      result = result.replace(/\/\*\* remove \*\*\/[^remove|removeend]*\/\*\* removeend \*\*\//, (match) => {
         console.log(match)
         return ''
       });

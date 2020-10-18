@@ -1,4 +1,4 @@
-import ToastComponent from '../../../components/Toast.vue'
+import ToastComponent from '../../components/Toast.vue'
 const Toast = {}
 Toast.install = function(Vue) {
   Vue.prototype.$zToast = function(message, opt = {}) {

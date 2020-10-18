@@ -3,7 +3,9 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router'
 import { initProject } from './initPriject'
-import { Toast } from './util/http/func-components/toast'
+import { Toast } from './util/func-components/toast'
+import store from './store'
+import '@/assets/icons' //svg icon
 
 initProject()
 
@@ -19,4 +21,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   render: h => h(App),
+  store
 }).$mount('#app')

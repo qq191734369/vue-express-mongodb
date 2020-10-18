@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <img class="vue-logo" alt="Vue logo" src="./assets/logo.png">
-    <img class="ignore" alt="Vue logo" src="./assets/logo.png">
-    <div @click="showToast">Version: {{version}}</div>
     <router-view></router-view>
   </div>
 </template>
@@ -26,6 +23,7 @@ export default {
 </script>
 
 <style>
+@import 'assets/style/reset.scss';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,5 +50,6 @@ img.ignore {
 
 body {
   margin: 0;
+  font-family: 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;;
 }
 </style>
