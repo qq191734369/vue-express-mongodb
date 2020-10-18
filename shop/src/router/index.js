@@ -5,9 +5,7 @@ const routes = [
         path: '/',
         redirect: {
             name: 'home'
-        },
-        name: 'helloword',
-        component: () => import('@/components/HelloWorld.vue')
+        }
     },
     {
         path: '/home',

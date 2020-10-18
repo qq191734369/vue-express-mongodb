@@ -50,7 +50,10 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/share.scss';
 .header {
+  position: fixed;
   display: flex;
+  top: 0;
+  width: 750px;
   background-color: $base-color1;
   height: 80px;
   color: $white;
@@ -80,7 +83,7 @@ export default {
   }
 
   .side-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     width: 600px;

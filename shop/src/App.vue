@@ -50,6 +50,7 @@ img.ignore {
 
 body {
   margin: 0;
-  font-family: 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;;
+  font-family: 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;
+  font-size: 32px;
 }
 </style>
