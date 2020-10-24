@@ -8,7 +8,7 @@
  
 <script>
   export default {
-    name: 'SvgIcon',
+    name: 'Card',
     props: {
       
     },
@@ -24,9 +24,12 @@
 </script>
  
 <style lang="scss" scoped>
+@import '../assets/style/share.scss';
 .card {
   box-shadow: 0 2px 10px rgba($color: #000000, $alpha: .2);
   border-radius: 8px;
+  // background-color: $base-color3;
+  @include hairlines-top(#dd0000);
 }
 
 .pop-enter-active, .pop-leave-active {

@@ -5,12 +5,11 @@ import router from './router'
 import { initProject } from './initPriject'
 import { Toast } from './util/func-components/toast'
 import store from './store'
-import '@/assets/icons' //svg icon
 
 initProject()
 
 /** remove **/
-console.log('need remove')
+console.log('import something')
 /** removeend **/
 
 Vue.use(VueRouter)

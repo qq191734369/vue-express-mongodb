@@ -21,7 +21,7 @@ import userService from 'service/user.service'
 import Toast from 'components/Toast'
 import { mapState } from 'vuex'
 /** remove **/
-console.log('need remove')
+console.log('console')
 /** removeend **/
 export default {
     components: {

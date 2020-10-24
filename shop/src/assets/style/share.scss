@@ -15,3 +15,18 @@ $font64: 64px;
 
 
 $toast-bg-color: rgba(0, 0, 0, 0.76);
+
+@mixin hairlines-top ($color: #000){
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-top: 1px solid $color;
+    transform: scale(0.5);
+  }
+}

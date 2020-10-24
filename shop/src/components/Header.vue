@@ -25,20 +25,29 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Header',
   data() {
     return {
-      showSideMenu: false
+      showSideMenu: false,
+      bodyDisplay: null
     }
   },
   methods: {
     onShowSideMenu() {
       this.showSideMenu = true
+
+      const body = document.querySelector('body')
+      this.bodyDisplay = getComputedStyle(body).overflow
+      body.style.overflow = 'hidden'
+
       setTimeout(() => {
         window.addEventListener('click', this.hideSideMenu)
       }, 0)
     },
     hideSideMenu() {
+      const body = document.querySelector('body')
+      body.style.overflow = this.bodyDisplay
+
       this.showSideMenu = false
       window.removeEventListener('click', this.hideSideMenu)
     }
@@ -57,6 +66,7 @@ export default {
   background-color: $base-color1;
   height: 80px;
   color: $white;
+  z-index: 1;
   svg {
     fill: $white;
   }
@@ -90,6 +100,7 @@ export default {
     background-color: $base-color1;
     box-shadow: 0 0 12px rgba($color: #000000, $alpha: .4);
     overflow-y: auto;
+    z-index: 1;
   }
 
   .fly-enter-active, .fly-leave-active {

@@ -29,12 +29,13 @@ export default {
   destroyed() {
   },
   methods: {
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/share.scss';
+// @import '../assets/style/share.scss';
 .main {
   padding-top: 80px;
 }
